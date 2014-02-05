@@ -18,13 +18,11 @@
  */
 
 #import "JNWCollectionViewGridLayout.h"
+#import "JNWCollectionViewLinearLayout.h"
 
 typedef struct {
 	CGPoint origin;
 } JNWCollectionViewGridLayoutItemInfo;
-
-NSString * const JNWCollectionViewGridLayoutHeaderKind = @"JNWCollectionViewGridLayoutHeader";
-NSString * const JNWCollectionViewGridLayoutFooterKind = @"JNWCollectionViewGridLayoutFooter";
 
 @interface JNWCollectionViewGridLayout()
 @property (nonatomic, assign) CGRect lastInvalidatedBounds;
@@ -61,7 +59,6 @@ NSString * const JNWCollectionViewGridLayoutFooterKind = @"JNWCollectionViewGrid
 static const CGSize JNWCollectionViewGridLayoutDefaultSize = (CGSize){ 44.f, 44.f };
 
 @interface JNWCollectionViewGridLayout()
-@property (nonatomic, strong) NSMutableArray *sections;
 @property (nonatomic, assign) NSUInteger numberOfColumns;
 @property (nonatomic, assign) CGFloat itemPadding;
 @end
@@ -73,13 +70,6 @@ static const CGSize JNWCollectionViewGridLayoutDefaultSize = (CGSize){ 44.f, 44.
 	if (self == nil) return nil;
 	self.itemSize = JNWCollectionViewGridLayoutDefaultSize;
 	return self;
-}
-
-- (NSMutableArray *)sections {
-	if (_sections == nil) {
-		_sections = [NSMutableArray array];
-	}
-	return _sections;
 }
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
@@ -163,9 +153,9 @@ static const CGSize JNWCollectionViewGridLayoutDefaultSize = (CGSize){ 44.f, 44.
 	CGFloat width = self.collectionView.visibleSize.width;
 	CGRect frame = CGRectZero;
 	
-	if ([kind isEqualToString:JNWCollectionViewGridLayoutHeaderKind]) {
+	if ([kind isEqualToString:JNWCollectionViewLinearLayoutHeaderKind]) {
 		frame = CGRectMake(0, section.offset - section.headerHeight, width, section.headerHeight);
-	} else if ([kind isEqualToString:JNWCollectionViewGridLayoutFooterKind]) {
+	} else if ([kind isEqualToString:JNWCollectionViewLinearLayoutFooterKind]) {
 		frame = CGRectMake(0, section.offset + section.height, width, section.footerHeight);
 	}
 	

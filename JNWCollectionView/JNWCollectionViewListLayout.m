@@ -18,6 +18,8 @@
  */
 
 #import "JNWCollectionViewListLayout.h"
+#import "JNWCollectionViewLinearLayout.h"
+
 
 typedef struct {
 	CGFloat height;
@@ -28,9 +30,6 @@ typedef NS_ENUM(NSInteger, JNWListEdge) {
 	JNWListEdgeTop,
 	JNWListEdgeBottom
 };
-
-NSString * const JNWCollectionViewListLayoutHeaderKind = @"JNWCollectionViewListLayoutHeader";
-NSString * const JNWCollectionViewListLayoutFooterKind = @"JNWCollectionViewListLayoutFooter";
 
 @interface JNWCollectionViewListLayoutSection : NSObject
 - (instancetype)initWithNumberOfRows:(NSInteger)numberOfRows;
@@ -61,10 +60,6 @@ NSString * const JNWCollectionViewListLayoutFooterKind = @"JNWCollectionViewList
 
 @end
 
-@interface JNWCollectionViewListLayout()
-@property (nonatomic, strong) NSMutableArray *sections;
-@end
-
 @implementation JNWCollectionViewListLayout
 
 - (instancetype)init {
@@ -72,13 +67,6 @@ NSString * const JNWCollectionViewListLayoutFooterKind = @"JNWCollectionViewList
 	if (self == nil) return nil;
 	self.rowHeight = 44.f;
 	return self;
-}
-
-- (NSMutableArray *)sections {
-	if (_sections == nil) {
-		_sections = [NSMutableArray array];
-	}
-	return _sections;
 }
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
@@ -149,7 +137,7 @@ NSString * const JNWCollectionViewListLayoutFooterKind = @"JNWCollectionViewList
 	CGFloat width = self.collectionView.visibleSize.width;
 	CGRect frame = CGRectZero;
 	
-	if ([kind isEqualToString:JNWCollectionViewListLayoutHeaderKind]) {
+	if ([kind isEqualToString:JNWCollectionViewLinearLayoutHeaderKind]) {
 		frame = CGRectMake(0, section.offset, width, section.headerHeight);
 		
 		if (self.stickyHeaders) {
@@ -164,7 +152,7 @@ NSString * const JNWCollectionViewListLayoutFooterKind = @"JNWCollectionViewList
 			
 			frame.origin.y = MIN(MAX(contentOffset.y, frame.origin.y), nextHeaderOrigin.y - CGRectGetHeight(frame));
 		}
-	} else if ([kind isEqualToString:JNWCollectionViewListLayoutFooterKind]) {
+	} else if ([kind isEqualToString:JNWCollectionViewLinearLayoutFooterKind]) {
 		frame = CGRectMake(0, section.offset + section.height - section.footerHeight, width, section.footerHeight);
 	}
 	

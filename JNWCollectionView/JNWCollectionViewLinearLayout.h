@@ -8,6 +8,9 @@
 
 #import "JNWCollectionViewLayout.h"
 
+extern NSString * const JNWCollectionViewLinearLayoutHeaderKind;
+extern NSString * const JNWCollectionViewLinearLayoutFooterKind;
+
 @protocol JNWCollectionViewLinearLayoutDelegate <NSObject>
 
 @optional
@@ -20,5 +23,7 @@
 @end
 
 @interface JNWCollectionViewLinearLayout : JNWCollectionViewLayout
+
+@property (nonatomic, strong) NSMutableArray *sections;
 
 @end

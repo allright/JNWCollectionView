@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		105A20A318A2749E009B57A7 /* JNWCollectionViewLinearLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 105A20A118A2749E009B57A7 /* JNWCollectionViewLinearLayout.h */; };
+		105A20A318A2749E009B57A7 /* JNWCollectionViewLinearLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 105A20A118A2749E009B57A7 /* JNWCollectionViewLinearLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		105A20A418A2749E009B57A7 /* JNWCollectionViewLinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 105A20A218A2749E009B57A7 /* JNWCollectionViewLinearLayout.m */; };
 		8467C6D7171E587F00A1F343 /* JNWCollectionViewReusableViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467C6D6171E587F00A1F343 /* JNWCollectionViewReusableViewSpec.m */; };
 		8467C6FA171E58F700A1F343 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8467C6E0171E589200A1F343 /* libExpecta.a */; };

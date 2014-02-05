@@ -19,10 +19,6 @@
 
 #import "JNWCollectionViewLinearLayout.h"
 
-/// The supplementary view kind identifiers used for the header and the footer.
-extern NSString * const JNWCollectionViewListLayoutHeaderKind;
-extern NSString * const JNWCollectionViewListLayoutFooterKind;
-
 /// The delegate is responsible for returning size information for the list layout.
 @protocol JNWCollectionViewListLayoutDelegate <JNWCollectionViewLinearLayoutDelegate>
 
