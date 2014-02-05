@@ -17,14 +17,14 @@
  IN THE SOFTWARE.
  */
 
-#import "JNWCollectionViewLayout.h"
+#import "JNWCollectionViewLinearLayout.h"
 
 /// The supplementary view kind identifiers used for the header and the footer.
 extern NSString * const JNWCollectionViewListLayoutHeaderKind;
 extern NSString * const JNWCollectionViewListLayoutFooterKind;
 
 /// The delegate is responsible for returning size information for the list layout.
-@protocol JNWCollectionViewListLayoutDelegate <NSObject>
+@protocol JNWCollectionViewListLayoutDelegate <JNWCollectionViewLinearLayoutDelegate>
 
 @optional
 
@@ -34,17 +34,12 @@ extern NSString * const JNWCollectionViewListLayoutFooterKind;
 /// Instead, `rowHeight` should be set manually for performance improvements.
 - (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
-/// Asks the delegate for the height of the header or footer in the specified section.
-///
-/// The default height for both the header and footer is 0.
-- (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForHeaderInSection:(NSInteger)index;
-- (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForFooterInSection:(NSInteger)index;
 
 @end
 
 /// A layout subclass that displays items in a vertical list with rows of
 /// items, similar to a table view.
-@interface JNWCollectionViewListLayout : JNWCollectionViewLayout
+@interface JNWCollectionViewListLayout : JNWCollectionViewLinearLayout
 
 /// The delegate for the list layout. The delegate, if needed, should be set before
 /// the collection view is reloaded.
