@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 AppJon. All rights reserved.
 //
 
-#import "JNWCollectionViewLinearLayout.h"
+#import "JNWCollectionViewLinearLayout+Protected.h"
 
 NSString * const JNWCollectionViewLinearLayoutHeaderKind = @"JNWCollectionViewLinearLayoutHeader";
 NSString * const JNWCollectionViewLinearLayoutFooterKind = @"JNWCollectionViewLinearLayoutFooter";

@@ -18,7 +18,7 @@
  */
 
 #import "JNWCollectionViewGridLayout.h"
-#import "JNWCollectionViewLinearLayout.h"
+#import "JNWCollectionViewLinearLayout+Protected.h"
 
 typedef struct {
 	CGPoint origin;

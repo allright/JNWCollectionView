@@ -18,7 +18,7 @@
  */
 
 #import "JNWCollectionViewListLayout.h"
-#import "JNWCollectionViewLinearLayout.h"
+#import "JNWCollectionViewLinearLayout+Protected.h"
 
 
 typedef struct {

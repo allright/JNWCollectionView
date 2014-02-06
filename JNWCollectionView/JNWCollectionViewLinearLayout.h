@@ -22,9 +22,10 @@ extern NSString * const JNWCollectionViewLinearLayoutFooterKind;
 
 @end
 
+
+
 @interface JNWCollectionViewLinearLayout : JNWCollectionViewLayout
 
-@property (nonatomic, strong) NSMutableArray *sections;
 
 /// If enabled, the headers will stick to the top of the visible area while
 /// the section is still visible.

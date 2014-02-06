@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		105A20A318A2749E009B57A7 /* JNWCollectionViewLinearLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 105A20A118A2749E009B57A7 /* JNWCollectionViewLinearLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		105A20A418A2749E009B57A7 /* JNWCollectionViewLinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 105A20A218A2749E009B57A7 /* JNWCollectionViewLinearLayout.m */; };
+		105A20DA18A37C73009B57A7 /* JNWCollectionViewLinearLayout+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 105A20D818A37C73009B57A7 /* JNWCollectionViewLinearLayout+Protected.h */; };
 		8467C6D7171E587F00A1F343 /* JNWCollectionViewReusableViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467C6D6171E587F00A1F343 /* JNWCollectionViewReusableViewSpec.m */; };
 		8467C6FA171E58F700A1F343 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8467C6E0171E589200A1F343 /* libExpecta.a */; };
 		8467C6FB171E58F700A1F343 /* libSpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8467C6EF171E589500A1F343 /* libSpecta.a */; };
@@ -135,6 +136,7 @@
 /* Begin PBXFileReference section */
 		105A20A118A2749E009B57A7 /* JNWCollectionViewLinearLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JNWCollectionViewLinearLayout.h; path = JNWCollectionView/JNWCollectionViewLinearLayout.h; sourceTree = SOURCE_ROOT; };
 		105A20A218A2749E009B57A7 /* JNWCollectionViewLinearLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JNWCollectionViewLinearLayout.m; path = JNWCollectionView/JNWCollectionViewLinearLayout.m; sourceTree = SOURCE_ROOT; };
+		105A20D818A37C73009B57A7 /* JNWCollectionViewLinearLayout+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "JNWCollectionViewLinearLayout+Protected.h"; path = "JNWCollectionView/JNWCollectionViewLinearLayout+Protected.h"; sourceTree = SOURCE_ROOT; };
 		8467C6D6171E587F00A1F343 /* JNWCollectionViewReusableViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JNWCollectionViewReusableViewSpec.m; path = JNWCollectionViewTests/JNWCollectionViewReusableViewSpec.m; sourceTree = SOURCE_ROOT; };
 		8467C6D8171E589200A1F343 /* Expecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Expecta.xcodeproj; path = external/Expecta/Expecta.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8467C6E7171E589500A1F343 /* Specta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Specta.xcodeproj; path = external/Specta/Specta.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -253,6 +255,7 @@
 				AB1514811715361D00871248 /* JNWCollectionViewGridLayout.m */,
 				105A20A118A2749E009B57A7 /* JNWCollectionViewLinearLayout.h */,
 				105A20A218A2749E009B57A7 /* JNWCollectionViewLinearLayout.m */,
+				105A20D818A37C73009B57A7 /* JNWCollectionViewLinearLayout+Protected.h */,
 			);
 			name = Layouts;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				AB0EA369189472A400E28525 /* JNWCollectionViewLayout+Private.h in Headers */,
 				ABC05C691807808E00CAED48 /* JNWCollectionView.h in Headers */,
 				AB3C71F7170CA8D3004A91DB /* JNWCollectionView+Private.h in Headers */,
+				105A20DA18A37C73009B57A7 /* JNWCollectionViewLinearLayout+Protected.h in Headers */,
 				AB3C71FB170CA8D3004A91DB /* JNWCollectionViewCell+Private.h in Headers */,
 				AB39819D1731A1B50062B2E0 /* JNWCollectionViewReusableView+Private.h in Headers */,
 				AB3C7209170CA8EF004A91DB /* JNWCollectionView-Prefix.pch in Headers */,
