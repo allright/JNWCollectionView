@@ -26,4 +26,13 @@ extern NSString * const JNWCollectionViewLinearLayoutFooterKind;
 
 @property (nonatomic, strong) NSMutableArray *sections;
 
+/// If enabled, the headers will stick to the top of the visible area while
+/// the section is still visible.
+///
+/// Defaults to NO.
+@property (nonatomic, assign) BOOL stickyHeaders;
+
+@property (nonatomic, assign) CGFloat headerHeight;
+@property (nonatomic, assign) CGFloat footerHeight;
+
 @end

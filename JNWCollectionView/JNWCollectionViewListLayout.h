@@ -54,10 +54,5 @@
 /// Defaults to 0.
 @property (nonatomic, assign) CGFloat verticalSpacing;
 
-/// If enabled, the headers will stick to the top of the visible area while
-/// the section is still visible.
-///
-/// Defaults to NO.
-@property (nonatomic, assign) BOOL stickyHeaders;
 
 @end
