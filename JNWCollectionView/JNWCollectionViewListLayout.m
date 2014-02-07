@@ -125,22 +125,13 @@ typedef NS_ENUM(NSInteger, JNWListEdge) {
 	}
 }
 
-- (JNWCollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {	
-	JNWCollectionViewLayoutAttributes *attributes = [[JNWCollectionViewLayoutAttributes alloc] init];
-	attributes.frame = [self rectForItemAtIndex:indexPath.jnw_item section:indexPath.jnw_section];
-	attributes.alpha = 1.f;
-	return attributes;
-}
-
-- (BOOL)shouldApplyExistingLayoutAttributesOnLayout {
-	return self.stickyHeaders;
-}
-
-- (CGRect)rectForItemAtIndex:(NSInteger)index section:(NSInteger)section {
-	JNWCollectionViewListLayoutSection *sectionInfo = self.sections[section];
-	CGFloat offset = sectionInfo.offset + sectionInfo.rowInfo[index].yOffset;
+- (CGRect)rectForItemAtIndexPath:(NSIndexPath*)indexPath
+{
+	JNWCollectionViewListLayoutSection *sectionInfo = self.sections[indexPath.jnw_section];
+	JNWCollectionViewListLayoutRowInfo *rowInfo = &sectionInfo.rowInfo[indexPath.jnw_item];
+	CGFloat offset = sectionInfo.offset + rowInfo->yOffset;
 	CGFloat width = self.collectionView.visibleSize.width;
-	CGFloat height = sectionInfo.rowInfo[index].height;
+	CGFloat height = rowInfo->height;
 	return CGRectMake(0, offset, width, height);
 }
 

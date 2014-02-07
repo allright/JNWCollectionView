@@ -48,11 +48,11 @@ static NSString * const identifier = @"CELL";
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(JNWCollectionView *)collectionView {
-	return 5;
+	return 500;
 }
 
 - (NSUInteger)collectionView:(JNWCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-	return 500;
+	return 3 + section;
 }
 
 - (CGSize)sizeForItemInCollectionView:(JNWCollectionView *)collectionView {

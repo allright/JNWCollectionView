@@ -137,15 +137,11 @@ static const CGSize JNWCollectionViewGridLayoutDefaultSize = (CGSize){ 44.f, 44.
 	}
 }
 
-- (JNWCollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (CGRect)rectForItemAtIndexPath:(NSIndexPath*)indexPath
+{
 	JNWCollectionViewGridLayoutSection *section = self.sections[indexPath.jnw_section];
 	JNWCollectionViewGridLayoutItemInfo itemInfo = section.itemInfo[indexPath.jnw_item];
-	CGFloat offset = section.offset;
-	
-	JNWCollectionViewLayoutAttributes *attributes = [[JNWCollectionViewLayoutAttributes alloc] init];
-	attributes.frame = CGRectMake(itemInfo.origin.x, itemInfo.origin.y + offset, self.itemSize.width, self.itemSize.height);
-	attributes.alpha = 1.f;
-	return attributes;
+	return CGRectMake(itemInfo.origin.x, itemInfo.origin.y + section.offset, self.itemSize.width, self.itemSize.height);
 }
 
 - (CGRect)rectForSectionAtIndex:(NSInteger)index {

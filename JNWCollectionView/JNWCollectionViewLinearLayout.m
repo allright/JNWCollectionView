@@ -55,5 +55,21 @@ NSString * const JNWCollectionViewLinearLayoutFooterKind = @"JNWCollectionViewLi
 	return attributes;
 }
 
+- (BOOL)shouldApplyExistingLayoutAttributesOnLayout {
+	return self.stickyHeaders;
+}
+
+- (CGRect)rectForItemAtIndexPath:(NSIndexPath*)indexPath
+{
+	NSAssert(0, @"method %s must be implemented in subclasses",__FUNCTION__);
+	return CGRectZero;
+}
+
+- (JNWCollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+	JNWCollectionViewLayoutAttributes *attributes = [[JNWCollectionViewLayoutAttributes alloc] init];
+	attributes.frame = [self rectForItemAtIndexPath:indexPath];
+	attributes.alpha = 1.f;
+	return attributes;
+}
 
 @end
