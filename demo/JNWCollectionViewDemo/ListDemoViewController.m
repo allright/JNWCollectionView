@@ -35,6 +35,7 @@ static NSString * const headerIdentifier = @"HEADER";
 	JNWCollectionViewListLayout *layout = [[JNWCollectionViewListLayout alloc] init];
 	layout.rowHeight = 44.f;
 	layout.delegate = self;
+	layout.stickyHeaders = YES;
 	self.collectionView.collectionViewLayout = layout;
 	
 	[self.collectionView registerClass:ListCell.class forCellWithReuseIdentifier:cellIdentifier];
@@ -65,11 +66,11 @@ static NSString * const headerIdentifier = @"HEADER";
 //}
 
 - (NSUInteger)collectionView:(JNWCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-	return 300;
+	return 3 + section;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(JNWCollectionView *)collectionView {
-	return 5;
+	return 500;
 }
 
 - (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForHeaderInSection:(NSInteger)index {

@@ -148,23 +148,6 @@ static const CGSize JNWCollectionViewGridLayoutDefaultSize = (CGSize){ 44.f, 44.
 	return attributes;
 }
 
-- (JNWCollectionViewLayoutAttributes *)layoutAttributesForSupplementaryItemInSection:(NSInteger)idx kind:(NSString *)kind {
-	JNWCollectionViewGridLayoutSection *section = self.sections[idx];
-	CGFloat width = self.collectionView.visibleSize.width;
-	CGRect frame = CGRectZero;
-	
-	if ([kind isEqualToString:JNWCollectionViewLinearLayoutHeaderKind]) {
-		frame = CGRectMake(0, section.offset - section.headerHeight, width, section.headerHeight);
-	} else if ([kind isEqualToString:JNWCollectionViewLinearLayoutFooterKind]) {
-		frame = CGRectMake(0, section.offset + section.height, width, section.footerHeight);
-	}
-	
-	JNWCollectionViewLayoutAttributes *attributes = [[JNWCollectionViewLayoutAttributes alloc] init];
-	attributes.frame = frame;
-	attributes.alpha = 1.f;
-	return attributes;
-}
-
 - (CGRect)rectForSectionAtIndex:(NSInteger)index {
 	JNWCollectionViewGridLayoutSection *section = self.sections[index];
 	CGFloat height = section.height + section.headerHeight + section.footerHeight;

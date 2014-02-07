@@ -26,6 +26,9 @@ extern NSString * const JNWCollectionViewLinearLayoutFooterKind;
 
 @interface JNWCollectionViewLinearLayout : JNWCollectionViewLayout
 
+/// The delegate for the list layout. The delegate, if needed, should be set before
+/// the collection view is reloaded.
+@property (nonatomic, unsafe_unretained) id<JNWCollectionViewLinearLayoutDelegate> delegate;
 
 /// If enabled, the headers will stick to the top of the visible area while
 /// the section is still visible.

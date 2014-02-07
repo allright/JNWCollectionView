@@ -29,11 +29,6 @@
 /// If this method is implemented, `itemSize` will be set to returned values.
 - (CGSize)sizeForItemInCollectionView:(JNWCollectionView *)collectionView;
 
-/// Asks the delegate for the height of the header or footer in the specified section.
-///
-/// The default height for both the header and footer is 0.
-- (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForHeaderInSection:(NSInteger)index;
-- (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForFooterInSection:(NSInteger)index;
 
 @end
 
