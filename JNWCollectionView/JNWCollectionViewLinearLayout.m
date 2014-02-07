@@ -40,10 +40,9 @@ NSString * const JNWCollectionViewLinearLayoutFooterKind = @"JNWCollectionViewLi
 					JNWCollectionViewLinearLayoutSection *section = self.sections[nextSectionIdx];
 					nextHeaderOrigin = section.frame.origin;
 				}
-
 			}
 			
-			frame.origin.y = MIN(MAX(contentOffset.y, frame.origin.y), nextHeaderOrigin.y - CGRectGetHeight(frame)- section.footerHeight);
+			frame.origin.y = MIN(MAX(contentOffset.y, frame.origin.y), nextHeaderOrigin.y - CGRectGetHeight(frame) - section.footerHeight);
 		}
 	} else if ([kind isEqualToString:JNWCollectionViewLinearLayoutFooterKind]) {
 		frame = CGRectMake(0, section.offset + section.height - section.footerHeight, width, section.footerHeight);

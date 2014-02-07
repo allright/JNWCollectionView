@@ -437,13 +437,15 @@ static void JNWCollectionViewCommonInit(JNWCollectionView *collectionView) {
 		return visibleIdentifiers;
 	
 	for (JNWCollectionViewSection *section in self.data.sections) {
-		for (NSString *identifier in allIdentifiers) {
-			NSString *kind = [self kindForSupplementaryViewIdentifier:identifier];
-			JNWCollectionViewLayoutAttributes *attributes = [self.collectionViewLayout layoutAttributesForSupplementaryItemInSection:section.index kind:kind];
-			if (CGRectIntersectsRect(attributes.frame, rect)) {
-				[visibleIdentifiers addObject:[self layoutIdentifierForSupplementaryViewIdentifier:identifier inSection:section.index]];
+		if (CGRectIntersectsRect(section.frame,rect)) {
+			for (NSString *identifier in allIdentifiers) {
+				NSString *kind = [self kindForSupplementaryViewIdentifier:identifier];
+				JNWCollectionViewLayoutAttributes *attributes = [self.collectionViewLayout layoutAttributesForSupplementaryItemInSection:section.index kind:kind];
+				if (CGRectIntersectsRect(attributes.frame, rect)) {
+					[visibleIdentifiers addObject:[self layoutIdentifierForSupplementaryViewIdentifier:identifier inSection:section.index]];
+				}
 			}
-		}		
+		}
 	}
 	
 	return visibleIdentifiers.copy;
