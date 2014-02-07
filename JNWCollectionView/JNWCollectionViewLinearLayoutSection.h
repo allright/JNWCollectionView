@@ -13,7 +13,7 @@ typedef struct {
 } JNWCollectionViewLinearLayoutItemInfo;
 
 @interface JNWCollectionViewLinearLayoutSection : NSObject
-
+@property (nonatomic, assign) CGRect frame;
 @property (nonatomic, assign) CGFloat offset;
 @property (nonatomic, assign) CGFloat height;
 @property (nonatomic, assign) CGFloat headerHeight;
